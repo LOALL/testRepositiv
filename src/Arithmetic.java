@@ -1,10 +1,6 @@
 public class Arithmetic {
-    private static int multiplication = 0;
-    private static int sum = 0;
-    private static int numberOne = 0;
-    private static int numberTwo = 0;
-    private static int maxNumbers = 0;
-    private static int minNumbers = 0;
+    private int numberOne = 0;
+    private int numberTwo = 0;
 
     //Конструктор
     public Arithmetic(int numberOne, int numberTwo) {
