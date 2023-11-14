@@ -15,29 +15,24 @@ public class Arithmetic {
 
 
     public int sum() {
-        sum = numberOne + numberTwo;
-        return sum;
+        return numberOne + numberTwo;
     }
+
     public int multiplication() {
-        multiplication = numberOne * numberTwo;
-        return multiplication;
+        return numberOne * numberTwo;
     }
     public int isMaxNumbers() {
 
         if (numberOne > numberTwo) {
-            maxNumbers = numberOne;
-            return maxNumbers;
+            return numberOne;
         }
-        maxNumbers = numberTwo;
-        return maxNumbers;
+        return numberTwo;
     }
     public int isMinNumbers() {
         if (numberOne < numberTwo) {
-            minNumbers = numberOne;
-            return minNumbers;
+            return numberOne;
         }
-        minNumbers = numberTwo;
-        return minNumbers;
+        return numberTwo;
     }
 
 
@@ -51,10 +46,8 @@ public class Arithmetic {
         System.out.println();
         System.out.println("Ваши введёные числа: " + numberOne + ";" + numberTwo + ":");
 
-        int sum = sum();
-        System.out.println("Сумма чисел: " + sum);
-        int multiplication = multiplication();
-        System.out.println("Произведение чисел: " + multiplication);
+        System.out.println("Сумма чисел: " + sum());
+        System.out.println("Произведение чисел: " + multiplication());
 
         if (isMaxNumbers() == isMinNumbers()) {
             System.out.println("Числа равны: " + isMaxNumbers() + " = " + isMinNumbers());
