@@ -1,10 +1,12 @@
 public class Basket {
-
-    private static int count = 0;
     private String items = "";
-    private int totalPrice = 0;
+    public int totalPrice = 0;
     private int limit;
     private double totalWeight = 0;
+    //Static
+    private static int count = 0;
+    private static int commonPrice = 0;
+    private static int commonCount = 0;
 
     public Basket() {
         increaseCount(1);
@@ -22,6 +24,11 @@ public class Basket {
         this.items = this.items + items;
         this.totalPrice = totalPrice;
     }
+    public double getTotalWeight() {
+        return totalWeight;
+    }
+
+    //Static methods
 
     public static int getCount() {
         return count;
@@ -31,9 +38,27 @@ public class Basket {
         Basket.count = Basket.count + count;
     }
 
-    public double getTotalWeight() {
-        return totalWeight;
+
+    public static int getCommonPrice() {
+        return commonPrice;
     }
+
+    public static void allPrice(int totalPrice) {
+        Basket.commonPrice = Basket.commonPrice + totalPrice;
+    }
+
+    public static int getCommonCount() {
+        return commonCount;
+    }
+
+    public static void allCount(int count) {
+        Basket.commonCount = Basket.commonCount + count;
+    }
+
+    public static int getAveragePrice() {
+        return Basket.commonPrice / Basket.commonCount;
+    }
+
 
 
 
@@ -58,6 +83,7 @@ public class Basket {
         items = items + "\n" + name + " - " +
             count + " шт. - " + price + " руб. " + "- " + weight + " кг.";
         totalPrice = totalPrice + count * price;
+        allCount(count);
         totalWeight = totalWeight + count * weight;
     }
 
@@ -83,5 +109,6 @@ public class Basket {
         }
 
         System.out.println("Общая стоимость: " + totalPrice + " руб. " + "\n" + "Общий вес: " + totalWeight + " кг. " );
+        allPrice(totalPrice);
     }
 }
